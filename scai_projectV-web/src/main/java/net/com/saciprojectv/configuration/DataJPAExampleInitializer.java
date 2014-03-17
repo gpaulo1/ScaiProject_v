@@ -13,12 +13,13 @@ import org.springframework.web.context.support.AnnotationConfigWebApplicationCon
 import org.springframework.web.servlet.DispatcherServlet;
 
 /**
- * Comment(s): The old way to load the application context configuration of our application is to use
- * the web application deployment descriptor file, which is more commonly known as
- * web.xml . However, because we are using the Spring Framework 3.1 in a Servlet 3.0
- * environment, we can create a web application configuration class by implementing
- * the WebApplicationInitializer interface. This ensures that Spring Framework
- * automatically detects our configuration class when a servlet container is started.
+ * Comment(s): The old way to load the application context configuration of our
+ * application is to use the web application deployment descriptor file, which
+ * is more commonly known as web.xml . However, because we are using the Spring
+ * Framework 3.1 in a Servlet 3.0 environment, we can create a web application
+ * configuration class by implementing the WebApplicationInitializer interface.
+ * This ensures that Spring Framework automatically detects our configuration
+ * class when a servlet container is started.
  * 
  * @author Paulo Garcia
  * @Feb 8, 2014

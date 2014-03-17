@@ -3,9 +3,12 @@
  */
 package net.com.scaiprojectv.controller;
 
+import net.com.scaiprojectv.model.Pessoa;
+import net.com.scaiprojectv.service.PessoaService;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -23,10 +26,17 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping(value = "/teste")
 public class ControllerTeste{
 
-	@RequestMapping(value = "", method = RequestMethod.GET)
+	@Autowired
+	private PessoaService alunoService;
+	
+	@RequestMapping(value = "")
 	public ModelAndView index(){
 		ModelAndView view = new ModelAndView("index");
-		System.out.println("Entrou na bagaçaaaa!!!");
+		Pessoa aluno = new Pessoa();
+		aluno.setNome("Paulo");
+		aluno.setSobreNome("Garcia");
+		alunoService.criar(aluno);
+		
 		return view;
 	}
 	
