@@ -32,6 +32,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //				.roles("USER");
 //	}
 //
+//	@Override
 //	protected void configure(HttpSecurity http) throws Exception {
 //		http.authorizeRequests().anyRequest().authenticated().and().formLogin()
 //				.loginPage("/").permitAll();

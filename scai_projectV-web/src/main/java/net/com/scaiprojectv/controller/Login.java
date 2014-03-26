@@ -23,9 +23,9 @@ public class Login{
 
 	private static final String PAGE_LOGIN = "login";
 	
-	@RequestMapping(value = {"/",""})
+	@RequestMapping(value = {"/login",""})
 	public ModelAndView login(){
-		ModelAndView view = new ModelAndView(Contact);
+		ModelAndView view = new ModelAndView(PAGE_LOGIN);
 		return view;
 	}
 	
