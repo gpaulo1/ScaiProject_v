@@ -12,6 +12,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
@@ -38,12 +39,14 @@ public class Turma {
 	private Integer vagasDisponiveis;
 	
 	@ManyToOne
+	@JoinColumn(name = "id_materia")
 	private Materia materia;
 
 	@Temporal(TemporalType.DATE)
 	private Date previsaoTermino;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "id_docente")
 	private Funcionario docente;
 	
 	@ManyToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE })

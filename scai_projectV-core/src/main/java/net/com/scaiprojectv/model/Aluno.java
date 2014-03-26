@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Temporal;
@@ -39,6 +40,7 @@ public class Aluno extends Pessoa{
 	private String rgResponsavel;
 	
 	@OneToOne
+	@JoinColumn(name = "id_matricula")
 	private Matricula matricula;
 
 	public Short getDiaVencimentoMensalidade() {

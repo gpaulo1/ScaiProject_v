@@ -3,7 +3,10 @@
  */
 package net.com.scaiprojectv.controller;
 
+import java.util.List;
+
 import net.com.scaiprojectv.model.Pessoa;
+import net.com.scaiprojectv.predicate.PessoaPredicate;
 import net.com.scaiprojectv.service.PessoaService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,6 +52,8 @@ public class AlunoController {
 		aluno.setNome("Livia");
 		aluno.setSobreNome("Garcia");
 		pessoaService.criar(aluno);
+		List<Pessoa> teste = (List<Pessoa>) pessoaService.buscarTodos(PessoaPredicate.buscarPorNome("Livia"));
+		System.out.println("Testtttttttttt: " + teste.get(0).getNome());
 		view.addObject("status", "Aluno " + aluno.getNome() + " cadastrado com sucesso!");
 		return view;
 	}

@@ -3,6 +3,7 @@
  */
 package net.com.scaiprojectv.enumerator;
 
+
 /**
  * Comment(s): Enumerator de acesso ao sistema.
  * 

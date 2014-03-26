@@ -19,6 +19,6 @@ import org.springframework.data.querydsl.QueryDslPredicateExecutor;
  *
  * Developed by Paulo Garcia
  */
-public interface PessoaRepository extends JpaRepository<Pessoa, Long>{
+public interface PessoaRepository extends JpaRepository<Pessoa, Long>, QueryDslPredicateExecutor<Pessoa>{
 
 }

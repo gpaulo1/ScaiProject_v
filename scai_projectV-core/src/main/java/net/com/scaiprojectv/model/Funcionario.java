@@ -8,6 +8,8 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 
@@ -44,6 +46,7 @@ public class Funcionario extends Pessoa{
 	@Column(nullable = true)
 	private String senha;
 	
+	@Enumerated(EnumType.STRING)
 	@Column(nullable = true)
 	private AcessoSistemaEnum acessoSistema;
 

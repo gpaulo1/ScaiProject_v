@@ -11,6 +11,7 @@ import java.util.List;
 import junit.framework.Assert;
 import net.com.scaiprojectv.config.test.ApplicationContextTest;
 import net.com.scaiprojectv.model.Pessoa;
+import net.com.scaiprojectv.predicate.PessoaPredicate;
 import net.com.scaiprojectv.service.PessoaService;
 
 import org.junit.Test;

@@ -12,6 +12,5 @@
 
 <h1>${status}</h1>
 
-</form>
 </body>
 </html>

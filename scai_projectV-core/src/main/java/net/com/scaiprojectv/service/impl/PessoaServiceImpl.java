@@ -5,14 +5,16 @@ package net.com.scaiprojectv.service.impl;
 
 import java.util.List;
 
+import javax.annotation.Resource;
+
 import net.com.scaiprojectv.model.Pessoa;
 import net.com.scaiprojectv.repository.PessoaRepository;
 import net.com.scaiprojectv.service.PessoaService;
 
-import javax.annotation.Resource;
-
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.mysema.query.types.Predicate;
 
 /**
  * Comment(s): Essa implementação da interface de {@link PessoaService} comunica
@@ -62,8 +64,9 @@ public class PessoaServiceImpl implements PessoaService {
 	 * 
 	 * @see net.com.scaiprojectv.service.AlunoService#buscarTodos()
 	 */
-	public List<Pessoa> buscarTodos() {
-		return repository.findAll();
+	public List<Pessoa> buscarTodos(Predicate condicao) {
+		List<Pessoa> pessoas =  (List<Pessoa>) repository.findAll(condicao);
+		return pessoas;
 	}
 
 	/*
@@ -73,6 +76,13 @@ public class PessoaServiceImpl implements PessoaService {
 	 */
 	public Pessoa buscarPorId(Long id) {
 		return repository.findOne(id);
+	}
+
+	/* (non-Javadoc)
+	 * @see net.com.scaiprojectv.service.PessoaService#buscarTodos()
+	 */
+	public List<Pessoa> buscarTodos() {
+		return repository.findAll();
 	}
 
 }

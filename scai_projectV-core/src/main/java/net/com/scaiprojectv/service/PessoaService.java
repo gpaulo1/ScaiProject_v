@@ -5,6 +5,8 @@ package net.com.scaiprojectv.service;
 
 import java.util.List;
 
+import com.mysema.query.types.Predicate;
+
 import net.com.scaiprojectv.model.Pessoa;
 
 
@@ -34,6 +36,12 @@ public interface PessoaService {
 	 * @return {@link Pessoa}
 	 */
 	Pessoa remover(Long id);
+	
+	/**
+	 * Métodos responsável por localizar todos os registros de "aluno" na base de dados.
+	 * @return List<Aluno>
+	 */
+	List<Pessoa>buscarTodos(Predicate condicao);
 	
 	/**
 	 * Métodos responsável por localizar todos os registros de "aluno" na base de dados.

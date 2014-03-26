@@ -12,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -32,7 +33,7 @@ import javax.persistence.TemporalType;
 public class Pessoa {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id_pessoa")
 	private Long id;
 	
@@ -61,6 +62,7 @@ public class Pessoa {
 	private String telefone;
 	
 	@ManyToOne
+	@JoinColumn(name = "id_estado")
 	private Estado estado;
 	
 	public Estado getEstado() {
